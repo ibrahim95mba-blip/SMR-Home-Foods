@@ -1,0 +1,24 @@
+{
+  "short_name": "SMR Home Foods",
+  "name": "SMR Home Foods",
+  "description": "Order fresh South Indian homemade food online.",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://app.netlify.com/projects/dynamic-kringle-dea26d/",
+  "scope": "https://app.netlify.com/projects/dynamic-kringle-dea26d/",
+  "background_color": "#000000",
+  "theme_color": "#FFC107",
+  "display": "standalone",
+  "orientation": "portrait"
+}
+

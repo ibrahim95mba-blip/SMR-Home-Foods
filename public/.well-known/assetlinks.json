@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.netlify.dynamic_kringle_dea26d.twa",
+        "sha256_cert_fingerprints": ["95:8C:8F:37:92:83:0C:A2:6A:81:33:97:0B:9D:D5:74:18:82:13:C1:C2:92:CC:FB:F3:09:3C:E1:E9:AE:5A:38"]
+      }
+    }]
