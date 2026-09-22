@@ -80,7 +80,7 @@ export const MEAL_MENUS: MealMenu[] = [
       {
         id: 'l1',
         name: 'Chicken Biryani',
-        description: '1 Pcs (Raita + Dalcha)',
+        description: '1 Pcs (Raita + Chicken Curry)',
         price: 120,
         qty: '1 Pcs',
         image: 'https://images.pexels.com/photos/16020573/pexels-photo-16020573.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
@@ -88,7 +88,7 @@ export const MEAL_MENUS: MealMenu[] = [
       {
         id: 'l2',
         name: 'Mutton Biryani',
-        description: '1 Pcs (Raita + Dalcha)',
+        description: '1 Pcs (Raita + Chicken Curry)',
         price: 180,
         qty: '1 Pcs',
         image: 'https://images.pexels.com/photos/33947401/pexels-photo-33947401.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
