@@ -14,8 +14,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://app.netlify.com/projects/dynamic-kringle-dea26d/",
-  "scope": "https://app.netlify.com/projects/dynamic-kringle-dea26d/",
+  "start_url": "/",
+  "scope": "/",
   "background_color": "#000000",
   "theme_color": "#FFC107",
   "display": "standalone",
