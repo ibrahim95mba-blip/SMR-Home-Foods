@@ -1,5 +1,6 @@
 import { X, Plus, Minus, ShoppingBag } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { DELIVERY_CHARGE } from '@/data/delivery';
 
 type CartDrawerProps = {
   open: boolean;
@@ -58,13 +59,13 @@ export default function CartDrawer({ open, onClose, onCheckout }: CartDrawerProp
                 <ShoppingBag className="w-7 h-7 text-gray-600" strokeWidth={2} />
               </div>
               <p className="text-gray-500 font-medium text-sm">Your cart is empty</p>
-              <p className="text-gray-600 text-xs mt-1">Add some delicious items to get started</p>
+              <p className="text-gray-600 text-xs mt-1">Add some items from any shop to get started</p>
             </div>
           ) : (
             <div className="space-y-2.5">
               {items.map((item) => (
                 <div
-                  key={`${item.id}-${item.mealType}`}
+                  key={`${item.id}-${item.shopId}`}
                   className="flex items-center gap-3 bg-neutral-900 rounded-xl p-3 border border-neutral-800"
                 >
                   <img
@@ -74,12 +75,12 @@ export default function CartDrawer({ open, onClose, onCheckout }: CartDrawerProp
                   />
                   <div className="flex-1 min-w-0">
                     <h4 className="text-white font-semibold text-sm leading-tight">{item.name}</h4>
-                    <p className="text-gray-500 text-[11px] capitalize">{item.mealType}</p>
+                    <p className="text-gray-600 text-[11px]">{item.shopName}</p>
                     <p className="text-yellow-400 font-bold text-sm mt-0.5">₹{item.price}</p>
                   </div>
                   <div className="flex items-center gap-2 bg-yellow-400 rounded-lg overflow-hidden">
                     <button
-                      onClick={() => updateQuantity(item.id, item.mealType, -1)}
+                      onClick={() => updateQuantity(item.id, item.shopId, -1)}
                       className="px-2 py-1.5 text-black hover:bg-yellow-300 transition-colors"
                     >
                       <Minus className="w-3.5 h-3.5" strokeWidth={2.5} />
@@ -88,7 +89,7 @@ export default function CartDrawer({ open, onClose, onCheckout }: CartDrawerProp
                       {item.quantity}
                     </span>
                     <button
-                      onClick={() => updateQuantity(item.id, item.mealType, 1)}
+                      onClick={() => updateQuantity(item.id, item.shopId, 1)}
                       className="px-2 py-1.5 text-black hover:bg-yellow-300 transition-colors"
                     >
                       <Plus className="w-3.5 h-3.5" strokeWidth={2.5} />
@@ -111,12 +112,16 @@ export default function CartDrawer({ open, onClose, onCheckout }: CartDrawerProp
         {items.length > 0 && (
           <div className="px-5 py-4 border-t border-neutral-800 bg-neutral-950">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-gray-400 text-sm">Delivery</span>
-              <span className="text-green-400 font-bold text-sm">FREE</span>
+              <span className="text-gray-400 text-sm">Items Total</span>
+              <span className="text-gray-300 font-semibold text-sm">₹{total}</span>
+            </div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-gray-400 text-sm">Delivery Charge</span>
+              <span className="text-yellow-400 font-bold text-sm">₹{DELIVERY_CHARGE}</span>
             </div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-white font-semibold text-base">Total</span>
-              <span className="text-yellow-400 font-extrabold text-2xl">₹{total}</span>
+              <span className="text-yellow-400 font-extrabold text-2xl">₹{total + DELIVERY_CHARGE}</span>
             </div>
             <button
               onClick={onCheckout}

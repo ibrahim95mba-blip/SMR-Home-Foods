@@ -1,13 +1,13 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import type { MenuItem, MealType } from '@/data/menu';
 
-export type CartItem = MenuItem & { quantity: number; mealType: MealType };
+export type CartItem = MenuItem & { quantity: number; mealType: MealType; shopId: string; };
 
 type CartContextType = {
   items: CartItem[];
-  addItem: (item: MenuItem, mealType: MealType) => void;
-  removeItem: (id: string, mealType: MealType) => void;
-  updateQuantity: (id: string, mealType: MealType, delta: number) => void;
+  addItem: (item: MenuItem, mealType: MealType, shopId: string) => void;
+  removeItem: (id: string, mealType: MealType, shopId: string) => void;
+  updateQuantity: (id: string, mealType: MealType, shopId: string, delta: number) => void;
   clearCart: () => void;
   getTotal: () => number;
   getCount: () => number;
@@ -18,25 +18,25 @@ const CartContext = createContext<CartContextType | null>(null);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
 
-  const addItem = useCallback((item: MenuItem, mealType: MealType) => {
+  const addItem = useCallback((item: MenuItem, mealType: MealType, shopId: string) => {
     setItems((prev) => {
-      const existing = prev.find((i) => i.id === item.id && i.mealType === mealType);
+      const existing = prev.find((i) => i.id === item.id && i.mealType && i.shopId === shopId);
       if (existing) {
         return prev.map((i) =>
-          i.id === item.id && i.mealType === mealType
+          i.id === item.id && i.mealType && i.shopId === shopId
             ? { ...i, quantity: i.quantity + 1 }
             : i
         );
       }
-      return [...prev, { ...item, quantity: 1, mealType }];
+      return [...prev, { ...item, quantity: 1, mealType, shopId }];
     });
   }, []);
 
-  const removeItem = useCallback((id: string, mealType: MealType) => {
-    setItems((prev) => prev.filter((i) => !(i.id === id && i.mealType === mealType)));
+  const removeItem = useCallback((id: string, mealType: MealType, shopId: string) => {
+    setItems((prev) => prev.filter((i) => !(i.id === id && i.mealType && i.shopId === shopId)));
   }, []);
 
-  const updateQuantity = useCallback((id: string, mealType: MealType, delta: number) => {
+  const updateQuantity = useCallback((id: string, mealType: MealType, shopId: string, delta: number) => {
     setItems((prev) =>
       prev
         .map((i) =>
