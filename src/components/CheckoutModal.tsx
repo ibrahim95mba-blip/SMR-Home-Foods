@@ -99,28 +99,37 @@ export default function CheckoutModal({ open, onClose }: CheckoutModalProps) {
         const formattedOrderItem = orderItems
           .map((item: any) => `• ${item.qty}x ${item.name} - ₹${item.price}`)
           .join('\n');
+      try {
+      const currentShopName = (window as any).currentShopName || 'SMR Home Foods';
+      const itemsFormatted = orderItems.map((item: any) => `• ${item.name} (${item.qty || item.quantity || 1}) — ₹${item.price}`).join('\n');
 
-    // EmailJS மூலமாக smrhomefood@gmail.com-க்கு நோட்டிபிகேஷன் அனுப்பும் கோடு
-    try {
-      const templateParams = {
-        to_email: 'smrhomefood@gmail.com',
-        shop_name: (window as any).currentShopName || 'SMR Home Foods',
-        customer_name: form.name.trim(), 
-        customer_phone: form.phone.trim(),
-        customer_address: form.address.trim(),
-        order_items: JSON.stringify(orderItems),
-        total_amount: grandTotal,
+      const formData = {
+        access_key: '52eb55fb-ac03-4b7c-884b-650b9c604b0f', // <--- உங்கள் Web3Forms Access Key-ஐ இங்கே போடவும்
+        subject: `New Order from ${currentShopName} - SMR Multi Shop`,
+        from_name: 'SMR Multi Shop App',
+        'Shop name': currentShopName,
+        'Customer name': form.name.trim(),
+        'Customer phone': form.phone.trim(),
+        'Customer address': form.address.trim(),
+        'Order items': itemsFormatted,
+        'Total amount': `₹${grandTotal}`,
       };
 
-      await emailjs.send(
-        'service_8ac4pxb', // உங்கள் EmailJS Service ID-யை இங்கே போடவும்
-        'template_g4uxw78', // உங்கள் EmailJS Template ID-யை இங்கே போடவும்
-        templateParams,
-        '8h_eRy-b8KNWNiMW4' // உங்கள் EmailJS Public Key-யை இங்கே போடவும்
-      );
-      console.log('Email sent successfully to smrhomefood@gmail.com');
-    } catch (err) {
-      console.error('Failed to send email notification:', err);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        console.log('Order email sent successfully via Web3Forms!');
+      }
+    } catch (error) {
+      console.error('Email error:', error);
     }
 
     setSuccess(data as OrderRow);

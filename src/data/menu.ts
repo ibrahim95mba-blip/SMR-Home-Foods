@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react';
-import { UtensilsCrossed, Hotel, Coffee, Drumstick } from 'lucide-react';
+import { UtensilsCrossed, Restaurant, Coffee, Drumstick } from 'lucide-react';
 
 export type MenuItem = {
   id: string;
@@ -24,6 +24,7 @@ export type Shop = {
   name: string;
   tagline: string;
   address: string;
+  timing: string;
   rating: number;
   coverImage: string;
   deliveryNote: string;
@@ -136,10 +137,11 @@ export const SHOPS: Shop[] = [
   // ============ HOTELS ============
   {
     id: 'LALA-BRIYANI-HOTEL-ANAIMALAI',
-    categoryType: 'hotel',
+    categoryType: 'Restaurant',
     name: 'Lala Briyani Hotel',
     tagline: 'Authentic Briyani & Fast Food',
     address: 'State Bank Opposite , Anaimalai',
+    timing: 'open: 12:30pm to 10:30pm ',
     rating: 4.7,
     coverImage: '/lalabriyani-Logo.jpg',
     deliveryNote: 'Hot & fresh food delivered within 30 min',
@@ -163,35 +165,35 @@ export const SHOPS: Shop[] = [
         items: [
           { id: 'lb-sd1', name: 'Chilly Chicken (Bone)', description: 'Crispy bone chicken chilli', price: 115, qty: '1 Plate', image:  px('7353388') },
           { id: 'lb-sd2', name: 'Chilly Chicken (Boneless)', description: 'Spicy boneless chicken chilli', price: 150, qty: '1 Plate', image: px('35071824') },
-          { id: 'lb-sd3', name: 'Chicken Manchurian', description: 'Tossed in Manchurian sauce', price: 196, qty: '1 Plate', image: px('35071815')  },
-          { id: 'lb-sd4', name: 'Pepper Chicken (Gravy)', description: 'Spicy pepper chicken gravy', price: 173, qty: '1 Plate', image: px('35532826')  },
-          { id: 'lb-sd5', name: 'Pepper Chicken (Dry)', description: 'Dry pepper roasted chicken', price: 173, qty: '1 Plate', image: px('8408994') },
+          { id: 'lb-sd3', name: 'Chicken Manchurian', description: 'Tossed in Manchurian sauce', price: 195, qty: '1 Plate', image: px('35071815')  },
+          { id: 'lb-sd4', name: 'Pepper Chicken (Gravy)', description: 'Spicy pepper chicken gravy', price: 175, qty: '1 Plate', image: px('35532826')  },
+          { id: 'lb-sd5', name: 'Pepper Chicken (Dry)', description: 'Dry pepper roasted chicken', price: 175, qty: '1 Plate', image: px('8408994') },
           { id: 'lb-sd6', name: 'Hot Pepper Chicken (Boneless)', description: 'Extremely hot pepper boneless chicken', price: 196, qty: '1 Plate', image: px('8174278') },
-          { id: 'lb-sd7', name: 'Alpaham Chicken (Half)', description: 'Juicy roasted alpham chicken half', price: 288, qty: '1 Pcs', image: px('30271609') },
+          { id: 'lb-sd7', name: 'Alpaham Chicken (Half)', description: 'Juicy roasted alpham chicken half', price: 290, qty: '1 Pcs', image: px('30271609') },
           { id: 'lb-sd8', name: 'Alpaham Chicken (Full)', description: 'Juicy roasted alpham chicken full', price: 575, qty: '1 Full', image: px('30271609') },
-          { id: 'lb-sd9', name: 'Grill Chicken (Half)', description: 'Tender grilled chicken half', price: 299, qty: '1 Pcs', image: px('25391590') },
+          { id: 'lb-sd9', name: 'Grill Chicken (Half)', description: 'Tender grilled chicken half', price: 300, qty: '1 Pcs', image: px('25391590') },
           { id: 'lb-sd10', name: 'Grill Chicken (Full)', description: 'Tender grilled chicken full', price: 575, qty: '1 Full', image: px('25391590') },
           { id: 'lb-sd11', name: 'Egg Gravy', description: 'Flavorful egg gravy curry', price: 115, qty: '1 Bowl', image: '/egggravy.png' },
-          { id: 'lb-sd12', name: 'Shawarma (Evening)', description: 'Special evening chicken shawarma', price: 92, qty: '1 Plate', image: px('37322775') },
-          { id: 'lb-sd13', name: 'Gobi 65', description: 'Crispy fried cauliflower', price: 81, qty: '1 Plate', image: px('28674543') },
-          { id: 'lb-sd14', name: 'Mushroom 65', description: 'Crispy fried mushroom', price: 104, qty: '1 Plate', image: px('18698224') },
-          { id: 'lb-sd15', name: 'Paneer 65', description: 'Crispy spiced paneer fry', price: 104, qty: '1 Plate', image: px('29631468') },
-          { id: 'lb-sd16', name: 'Gobi Manchurian', description: 'Gobi tossed in Manchurian sauce', price: 161, qty: '1 Plate', image: px('35071828') },
+          { id: 'lb-sd12', name: 'Shawarma (Evening)', description: 'Special evening chicken shawarma', price: 90, qty: '1 Plate', image: px('37322775') },
+          { id: 'lb-sd13', name: 'Gobi 65', description: 'Crispy fried cauliflower', price: 80, qty: '1 Plate', image: px('28674543') },
+          { id: 'lb-sd14', name: 'Mushroom 65', description: 'Crispy fried mushroom', price: 105, qty: '1 Plate', image: px('18698224') },
+          { id: 'lb-sd15', name: 'Paneer 65', description: 'Crispy spiced paneer fry', price: 105, qty: '1 Plate', image: px('29631468') },
+          { id: 'lb-sd16', name: 'Gobi Manchurian', description: 'Gobi tossed in Manchurian sauce', price: 160, qty: '1 Plate', image: px('35071828') },
           { id: 'lb-sd17', name: 'Mushroom Manchurian', description: 'Mushroom tossed in Manchurian sauce', price: 115, qty: '1 Plate', image: px('35066808') },
-          { id: 'lb-sd18', name: 'Paneer Manchurian', description: 'Paneer tossed in Manchurian sauce', price: 138, qty: '1 Plate', image: px('31783383') },
-          { id: 'lb-sd19', name: 'Mushroom 65 / Masala', description: 'Special mushroom starter', price: 173, qty: '1 Plate', image: px('38807025') }
+          { id: 'lb-sd18', name: 'Paneer Manchurian', description: 'Paneer tossed in Manchurian sauce', price: 140, qty: '1 Plate', image: px('31783383') },
+          { id: 'lb-sd19', name: 'Mushroom 65 / Masala', description: 'Special mushroom starter', price: 175, qty: '1 Plate', image: px('38807025') }
         ]
       },
       {
         id: 'parotta-breads',
         label: 'Parotta & Breads',
         items: [
-          { id: 'lb-pb1', name: 'Parotta (2 Pcs)', description: 'Soft layered Kerala parotta', price: 58, qty: '2 Pcs', image: '/parotta.png' },
+          { id: 'lb-pb1', name: 'Parotta (2 Pcs)', description: 'Soft layered Kerala parotta', price: 60, qty: '2 Pcs', image: '/parotta.png' },
           { id: 'lb-pb2', name: 'Ellai Parotta', description: 'Banana leaf wrapped special parotta', price: 150, qty: '1 Pc', image: px('8859972') },
           { id: 'lb-pb3', name: 'Kothu Parotta', description: 'Shredded parotta tossed with spices', price: 115, qty: '1 Plate', image: px('35071814') },
-          { id: 'lb-pb4', name: 'Chicken Kothu Parotta', description: 'Kothu parotta loaded with chicken chunks', price: 150, qty: '1 Plate', image: '/chickenkothuparotta.png' },
-          { id: 'lb-pb5', name: 'Chapati (2 Pcs)', description: 'Soft wheat chapathi', price: 58, qty: '2 Pcs', image: px('40262787') },
-          { id: 'lb-pb6', name: 'Egg Chapati (2 Pcs)', description: 'Chapathi cooked with egg layer', price: 81, qty: '2 Pcs', image: px('31150262') },
+          { id: 'lb-pb4', name: 'Chicken Kothu Parotta', description: 'Kothu parotta loaded with chicken chunks', price: 150, qty: '1 Plate', image: '/chickenkothuparotta.jpg' },
+          { id: 'lb-pb5', name: 'Chapati (2 Pcs)', description: 'Soft wheat chapathi', price: 60, qty: '2 Pcs', image: px('40262787') },
+          { id: 'lb-pb6', name: 'Egg Chapati (2 Pcs)', description: 'Chapathi cooked with egg layer', price: 80, qty: '2 Pcs', image: px('31150262') },
           { id: 'lb-pb7', name: 'Chicken Salna / Gravy', description: 'Extra chicken gravy', price: 150, qty: '1 Bowl', image: px('38400477') },
           { id: 'lb-pb8', name: 'Egg Salna', description: 'Extra egg gravy', price: 115, qty: '1 Bowl', image: px('35066815') },
         ]
@@ -200,11 +202,11 @@ export const SHOPS: Shop[] = [
         id: 'dosa-tiffin',
         label: 'Dosa Varieties',
         items: [
-          { id: 'lb-ds1', name: 'Plain Dosa', description: 'Crispy classic dosa', price: 58, qty: '1 Pc', image: '/dosa.png' },
-          { id: 'lb-ds2', name: 'Roast', description: 'Crispy butter roast dosa', price: 69, qty: '1 Pc', image: px('20422133') },
-          { id: 'lb-ds3', name: 'Egg Roast', description: 'Dosa layered with egg', price: 92, qty: '1 Pc', image: px('31150262') },
-          { id: 'lb-ds4', name: 'Onion Roast', description: 'Crispy dosa with onion topping', price: 92, qty: '1 Pc', image: px('20422123') },
-          { id: 'lb-ds5', name: 'Podi Roast', description: 'Dosa sprinkled with spicy gun podi', price: 92, qty: '1 Pc', image: px('20422129') },
+          { id: 'lb-ds1', name: 'Plain Dosa', description: 'Crispy classic dosa', price: 60, qty: '1 Pc', image: px('20422121') },
+          { id: 'lb-ds2', name: 'Roast', description: 'Crispy butter roast dosa', price: 70, qty: '1 Pc', image: px('20422133') },
+          { id: 'lb-ds3', name: 'Egg Roast', description: 'Dosa layered with egg', price: 90, qty: '1 Pc', image: px('31150262') },
+          { id: 'lb-ds4', name: 'Onion Roast', description: 'Crispy dosa with onion topping', price: 90, qty: '1 Pc', image: px('20422123') },
+          { id: 'lb-ds5', name: 'Podi Roast', description: 'Dosa sprinkled with spicy gun podi', price: 90, qty: '1 Pc', image: px('20422129') },
           { id: 'lb-ds6', name: 'Onion Ghee Podi Roast', description: 'Rich ghee podi onion roast', price: 115, qty: '1 Pc', image: px('28107046') },
           { id: 'lb-ds7', name: 'Chicken Roast', description: 'Dosa stuffed with spicy chicken masala', price: 150, qty: '1 Pc', image: px('5560763') }
         ]
@@ -213,12 +215,12 @@ export const SHOPS: Shop[] = [
         id: 'rice-noodles',
         label: 'Rice & Noodles',
         items: [
-          { id: 'lb-rn1', name: 'Chicken Rice', description: 'Flavorful chicken fried rice', price: 138, qty: '1 Plate', image: px('7758253') },
-          { id: 'lb-rn2', name: 'Chicken Noodles', description: 'Stir-fried chicken noodles', price: 138, qty: '1 Plate', image: px('8983416') },
-          { id: 'lb-rn3', name: 'Veg Rice', description: 'Classic vegetable fried rice', price: 104, qty: '1 Plate', image: px('3926124') },
+          { id: 'lb-rn1', name: 'Chicken Rice', description: 'Flavorful chicken fried rice', price: 140, qty: '1 Plate', image: px('7758253') },
+          { id: 'lb-rn2', name: 'Chicken Noodles', description: 'Stir-fried chicken noodles', price: 140, qty: '1 Plate', image: px('8983416') },
+          { id: 'lb-rn3', name: 'Veg Rice', description: 'Classic vegetable fried rice', price: 105, qty: '1 Plate', image: px('3926124') },
           { id: 'lb-rn4', name: 'Mushroom Rice', description: 'Fried rice with fresh mushrooms', price: 115, qty: '1 Plate', image: px('34341985') },
           { id: 'lb-rn5', name: 'Cauliflower Rice', description: 'Fried rice with spiced cauliflower', price: 115, qty: '1 Plate', image: px('10695968') },
-          { id: 'lb-rn6', name: 'Veg Noodles', description: 'Classic stir-fried veg noodles', price: 104, qty: '1 Plate', image: px('37165674') },
+          { id: 'lb-rn6', name: 'Veg Noodles', description: 'Classic stir-fried veg noodles', price: 105, qty: '1 Plate', image: px('37165674') },
           { id: 'lb-rn7', name: 'Mushroom Noodles', description: 'Noodles tossed with mushrooms', price: 115, qty: '1 Plate', image: px('40262812') },
           { id: 'lb-rn8', name: 'Gobi Noodles', description: 'Noodles tossed with gobi pieces', price: 115, qty: '1 Plate', image: px('17848654') }
         ]
@@ -227,16 +229,221 @@ export const SHOPS: Shop[] = [
         id: 'tandoori-gravies',
         label: 'Tandoori Breads & Gravies',
         items: [
-          { id: 'lb-tg1', name: 'Naan', description: 'Tandoor baked plain naan', price: 69, qty: '1 Pc', image: px('16851842') },
-          { id: 'lb-tg2', name: 'Roti', description: 'Traditional tandoori wheat roti', price: 69, qty: '1 Pc', image: px('12427834') },
-          { id: 'lb-tg3', name: 'Butter Naan', description: 'Soft naan brushed with butter', price: 81, qty: '1 Pc', image: px('15119269') },
-          { id: 'lb-tg4', name: 'Butter Chicken Gravy', description: 'Rich and creamy butter chicken', price: 196, qty: '1 Plate', image: px('7625056') },
-          { id: 'lb-tg5', name: 'Kadai Chicken Gravy', description: 'Spiced kadai chicken masala', price: 196, qty: '1 Plate', image: px('25884470') },
-          { id: 'lb-tg6', name: 'Paneer Butter Masala Gravy', description: 'Creamy paneer butter masala', price: 196, qty: '1 Plate', image: px('9609838') },
-          { id: 'lb-tg7', name: 'Mushroom Masala Gravy', description: 'Spiced mushroom gravy', price: 196, qty: '1 Plate', image: px('35267278') }
+          { id: 'lb-tg1', name: 'Naan', description: 'Tandoor baked plain naan', price: 70, qty: '1 Pc', image: px('16851842') },
+          { id: 'lb-tg2', name: 'Roti', description: 'Traditional tandoori wheat roti', price: 70, qty: '1 Pc', image: px('12427834') },
+          { id: 'lb-tg3', name: 'Butter Naan', description: 'Soft naan brushed with butter', price: 80, qty: '1 Pc', image: px('15119269') },
+          { id: 'lb-tg4', name: 'Butter Chicken Gravy', description: 'Rich and creamy butter chicken', price: 195, qty: '1 Plate', image: px('7625056') },
+          { id: 'lb-tg5', name: 'Kadai Chicken Gravy', description: 'Spiced kadai chicken masala', price: 195, qty: '1 Plate', image: px('25884470') },
+          { id: 'lb-tg6', name: 'Paneer Butter Masala Gravy', description: 'Creamy paneer butter masala', price: 195, qty: '1 Plate', image: px('9609838') },
+          { id: 'lb-tg7', name: 'Mushroom Masala Gravy', description: 'Spiced mushroom gravy', price: 195, qty: '1 Plate', image: px('35267278') }
         ]
       }
     ]
+  },
+  {
+    id: 'MIST-TEA',
+    categoryType: 'Restaurant',
+    name: 'Mist Tea',
+    tagline: 'Aesthetic Tea Shop',
+    address: 'Anaimalai',
+    timing: 'open 10:30am to 10:00pm',
+    rating: 4.8,
+    coverImage: '/mittea.jpg',
+    deliveryNote: 'Fresh items delivered within 30 min',
+    categories: [
+       
+      {
+        id: 'fries',
+        label: 'Fries',
+        items: [
+          { id: 'mt-fr1', name: 'French Fries', description: 'Crispy salted potato fries', price: 115, qty: '1 Plate', image: '/ff.jpg' },
+          { id: 'mt-fr2', name: 'Peri Peri Fries', description: 'Spicy peri peri seasoned fries', price: 140, qty: '1 Plate', image: '/ppf.jpg' },
+          { id: 'mt-fr3', name: 'Schezwan Fries', description: 'Tossed in spicy schezwan sauce', price: 160, qty: '1 Plate', image: '/schezwanfries.jpeg' },
+          { id: 'mt-fr4', name: 'Chicken Loaded Fries', description: 'Fries topped with chicken chunks & sauce', price: 210, qty: '1 Plate', image: '/clf.jpg' }
+        ]
+      },
+      
+      {
+        id: 'milo',
+        label: 'Milo & Bournvita',
+        items: [
+          { id: 'mt-ml1', name: 'Hot Milo', description: 'Hot chocolate malt drink', price: 60, qty: '1 Cup', image: '/hotmilo.jpg' },
+          { id: 'mt-ml2', name: 'Cold Milo', description: 'Chilled Milo drink', price: 90, qty: '1 Glass', image: '/coldmilo.jpg' },
+          { id: 'mt-ml3', name: 'Bournvita', description: 'Health malt drink', price: 60, qty: '1 Cup', image: '/bournvita.jpg' }
+        ]
+      },
+      {
+        id: 'cold-beverages',
+        label: 'Cold Beverages',
+        items: [
+          { id: 'mt-cb1', name: 'Cold Coffee', description: 'Chilled creamy cold coffee', price: 90, qty: '1 Glass', image: '/coldcoffee.jpg' },
+          { id: 'mt-cb2', name: 'Cold Boost', description: 'Chilled boost drink', price: 90, qty: '1 Glass', image: '/coldboost.jpg' }
+        ]
+      },
+      {
+        id: 'mojitos',
+        label: 'Mojitos',
+        items: [
+          { id: 'mt-mj1', name: 'Lime & Mint Mojito', description: 'Refreshing lime and mint cooler', price: 90, qty: '1 Glass', image: '/mintlime.png' },
+          { id: 'mt-mj2', name: 'Green Apple Mojito', description: 'Crisp green apple mocktail', price: 90, qty: '1 Glass', image: '/greenapplemojito.jpg' },
+          { id: 'mt-mj3', name: 'Water Melon Mojito', description: 'Fresh watermelon cooler', price: 90, qty: '1 Glass', image: '/watermelonmojito.png' },
+          { id: 'mt-mj4', name: 'Pineapple Mojito', description: 'Tropical pineapple cooler', price: 90, qty: '1 Glass', image: '/pineapplemojito.jpg' },
+          { id: 'mt-mj5', name: 'Kiwi Mojito', description: 'Sweet kiwi fruit mocktail', price: 90, qty: '1 Glass', image: '/kiwimojito.jpg' },
+          { id: 'mt-mj6', name: 'Lychee Mojito', description: 'Delicate lychee cooler', price: 100, qty: '1 Glass', image: '/lycheemojito.jpg' },
+          { id: 'mt-mj7', name: 'Blue Curacao Mojito', description: 'Vibrant blue curacao mocktail', price: 100, qty: '1 Glass', image: '/bluecuracaomojito.jpg' }
+        ]
+      },
+      {
+        id: 'milk-shakes',
+        label: 'Milk Shakes',
+        items: [
+          { id: 'mt-ms1', name: 'Vanilla Milkshake', description: 'Classic vanilla shake', price: 140, qty: '1 Glass', image: '/vanillamilkshake.jpg' },
+          { id: 'mt-ms2', name: 'Strawberry Milkshake', description: 'Sweet strawberry shake', price: 140, qty: '1 Glass', image: '/strawberryshake.png' },
+          { id: 'mt-ms3', name: 'Mango Milkshake', description: 'Rich mango shake', price: 140, qty: '1 Glass', image: '/mangoshake.png' },
+          { id: 'mt-ms4', name: 'Butterscotch Milkshake', description: 'Crunchy butterscotch shake', price: 150, qty: '1 Glass', image: '/butterscotchmilkshake.jpg' },
+          { id: 'mt-ms5', name: 'Blue Berry Milkshake', description: 'Fruity blueberry shake', price: 150, qty: '1 Glass', image: '/blueberrymilkshake.jpg' },
+          { id: 'mt-ms6', name: 'Black Currant Milkshake', description: 'Rich black currant shake', price: 150, qty: '1 Glass', image: '/blackcurrantmilkshake.jpg' },
+          { id: 'mt-ms7', name: 'Chocolate Milkshake', description: 'Chocolaty thick shake', price: 160, qty: '1 Glass', image: '/cholateshake.png' },
+          { id: 'mt-ms8', name: 'Oreo Shake', description: 'Crushed oreo cookie shake', price: 170, qty: '1 Glass', image: '/oreoshake.png' },
+          { id: 'mt-ms9', name: 'KitKat Shake', description: 'Crunchy kitkat chocolate shake', price: 185, qty: '1 Glass', image: '/kitkatshake.jpg' }
+        ]
+      },
+      {
+        id: 'fresh-lime',
+        label: 'Fresh Lime',
+        items: [
+          { id: 'mt-fl1', name: 'Mint & Lime', description: 'Fresh lime with mint flavor', price: 60, qty: '1 Glass', image: '/mintlime.png' },
+          { id: 'mt-fl2', name: 'Ginger & Lime', description: 'Spiced ginger lime juice', price: 70, qty: '1 Glass', image: '/gingersoda.jpg' },
+          { id: 'mt-fl3', name: 'Masala & Lime', description: 'Tangy masala lime juice', price: 80, qty: '1 Glass', image: '/masalasoda.png' }
+        ]
+      },
+      {
+        id: 'deserts',
+        label: 'Deserts & Specials',
+        items: [
+          { id: 'mt-ds1', name: 'Fruit Custard', description: 'Creamy fruit custard dessert', price: 70, qty: '1 Bowl', image: '/fruitcustard.jpeg' },
+          { id: 'mt-ds2', name: 'Classic Brownie', description: 'Rich chocolate brownie', price: 80, qty: '1 Pc', image: '/classicbrownie.jpg' },
+          { id: 'mt-ds3', name: 'Nuts Brownie', description: 'Brownie loaded with nuts', price: 105, qty: '1 Pc', image: '/nutsbrownie.jpg' },
+          { id: 'mt-ds4', name: 'Brownie with Ice Cream', description: 'Sizzling brownie served with ice cream', price: 140, qty: '1 Plate', image: '/brownieicecream.jpg' },
+          { id: 'mt-ds5', name: 'Rose Milk Tres Leches', description: 'Rose flavored three milk cake', price: 175, qty: '1 Pc', image: '/rosemilkcake.jpg' },
+          { id: 'mt-ds6', name: 'Ras Malai Tres Leches', description: 'Rasmalai flavored fusion milk cake', price: 200, qty: '1 Pc', image: '/rasmalaicake.jpg' }
+        ]
+      },
+      
+      {
+        id: 'fried-chicken',
+        label: 'Fried Chicken',
+        items: [
+          { id: 'mt-fc1', name: 'Crispy Chicken Wings', description: 'Crispy fried chicken wings (6 pcs)', price: 210, qty: '6 Pcs', image: '/cw.jpg' },
+          { id: 'mt-fc2', name: 'Crispy Chicken Popcorn', description: 'Bite-sized crispy chicken popcorn (16 pcs)', price: 230, qty: '16 Pcs', image: '/cp.jpg' },
+          { id: 'mt-fc3', name: 'Crispy Chicken Strips', description: 'Boneless crunchy chicken strips (6 pcs)', price: 230, qty: '6 Pcs', image: '/cs.jpg' },
+          { id: 'mt-fc4', name: 'Crispy Chicken Lolipop', description: 'Juicy chicken lollipops (6 pcs)', price: 255, qty: '6 Pcs', image: '/clp.jpg' }
+        ]
+      },
+      {
+        id: 'spicy-chicken',
+        label: 'Spicy Chicken',
+        items: [
+          { id: 'mt-sc1', name: 'Schezwan Chicken Wings', description: 'Wings tossed in schezwan sauce', price: 210, qty: '6 Pcs', image: '/schezwanwings.jpeg' },
+          { id: 'mt-sc2', name: 'Schezwan Chicken Lollipop', description: 'Lollipops tossed in schezwan sauce', price: 230, qty: '6 Pcs', image: '/schezwanlolipop.jpeg' }
+        ]
+      },
+      {
+        id: 'burger',
+        label: 'Burger',
+        items: [
+          { id: 'mt-bg1', name: 'Veg Burger', description: 'Crispy veg patty burger', price: 95, qty: '1 Pc', image: '/vegburger.jpg' },
+          { id: 'mt-bg2', name: 'Veg Cheese Burger', description: 'Veg burger loaded with cheese', price: 115, qty: '1 Pc', image: '/vegcheesburger.jpg' },
+          { id: 'mt-bg3', name: 'Double Decker Veg Burger', description: 'Double patty veg burger', price: 150, qty: '1 Pc', image: '/doublevegburger.jpg' },
+          { id: 'mt-bg4', name: 'Chicken Burger', description: 'Juicy chicken patty burger', price: 130, qty: '1 Pc', image: '/chickenburger.jpg' },
+          { id: 'mt-bg5', name: 'Chicken Cheese Burger', description: 'Chicken burger with extra cheese', price: 150, qty: '1 Pc', image: '/chickencheesburger.jpg' },
+          { id: 'mt-bg6', name: 'Chicken Jumbo Burger', description: 'Extra large loaded chicken burger', price: 210, qty: '1 Pc', image: '/chickenjumboburger.jpg' }
+        ]
+      },
+      {
+        id: 'sandwich',
+        label: 'Sandwich',
+        items: [
+          { id: 'mt-sw1', name: 'Veg Sandwich', description: 'Fresh vegetable sandwich', price: 95, qty: '1 Pc', image: '/vegsandwich.jpg' },
+          { id: 'mt-sw2', name: 'Corn Cheese Sandwich', description: 'Sweet corn and cheese filling', price: 115, qty: '1 Pc', image: '/vegcheessandwich.jpg' },
+          { id: 'mt-sw3', name: 'Paneer Tikka Sandwich', description: 'Spiced paneer tikka sandwich', price: 150, qty: '1 Pc', image: '/paneersandwich.jpg' },
+          { id: 'mt-sw4', name: 'Chicken Sandwich', description: 'Savory chicken filled sandwich', price: 140, qty: '1 Pc', image: '/chickensandwich.jpg' }
+        ]
+      },
+      {
+        id: 'bread-omlette',
+        label: 'Bread Omlette',
+        items: [
+          { id: 'mt-bo1', name: 'Bread Omlette', description: 'Classic street style bread omelette', price: 70, qty: '1 Plate', image: '/breadomlet.jpg' },
+          { id: 'mt-bo2', name: 'Special Bread Omlette', description: 'Loaded special bread omelette', price: 105, qty: '1 Plate', image: '/cheesbreadomlet.jpg' },
+          { id: 'mt-bo3', name: 'Chicken Bread Omlette', description: 'Bread omelette stuffed with chicken', price: 140, qty: '1 Plate', image: '/chickenbreadomlatte.jpeg' }
+        ]
+      },
+      {
+        id: 'pasta',
+        label: 'Pasta',
+        items: [
+          { id: 'mt-ps1', name: 'White Souce Veg Pasta', description: 'Creamy white sauce pasta', price: 175, qty: '1 Plate', image: '/whitepastad.jpeg' },
+          { id: 'mt-ps2', name: 'Red Sauce Chicken Pasta', description: 'Tangy red sauce pasta with chicken', price: 210, qty: '1 Plate', image: '/redpasta.jpeg' }
+        ]
+      },
+      {
+        id: 'momos',
+        label: 'Momos',
+        items: [
+          { id: 'mt-mm1', name: 'Steamed Momos (Veg)', description: 'Soft steamed veg momos', price: 115, qty: '1 Plate', image: '/steamedvegmomos.jpeg' },
+          { id: 'mt-mm2', name: 'Steamed Momos (Panner)', description: 'Soft steamed paneer momos', price: 140, qty: '1 Plate', image: '/steamedpaneermomos.jpeg' },
+          { id: 'mt-mm3', name: 'Steamed Momos (Chicken)', description: 'Soft steamed chicken momos', price: 150, qty: '1 Plate', image: '/steamedchickenmomos.jpeg' },
+          { id: 'mt-mm4', name: 'Fried Momos (Veg)', description: 'Crispy fried veg momos', price: 130, qty: '1 Plate', image: '/friedvegmomos.jpeg' },
+          { id: 'mt-mm5', name: 'Fried Momos (Panner)', description: 'Crispy fried paneer momos', price: 150, qty: '1 Plate', image: '/friedpannermomos.jpeg' },
+          { id: 'mt-mm6', name: 'Fried Momos (Chicken)', description: 'Crispy fried chicken momos', price: 160, qty: '1 Plate', image: '/friedchickenmomos.jpeg' },
+          { id: 'mt-mm7', name: 'Peri Peri Momos (Veg)', description: 'Tossed in peri peri spice', price: 140, qty: '1 Plate', image: '/periperivegmomos.jpeg' },
+          { id: 'mt-mm8', name: 'Peri Peri Momos (Panner)', description: 'Paneer momos with peri peri flavor', price: 160, qty: '1 Plate', image: '/periperipannermomos.jpeg' },
+          { id: 'mt-mm9', name: 'Peri Peri Momos (Chicken)', description: 'Chicken momos with peri peri flavor', price: 175, qty: '1 Plate', image: '/periperichickenmomos.jpg' },
+          { id: 'mt-mm10', name: 'Sezwan Momos (Veg)', description: 'Schezwan tossed veg momos', price: 140, qty: '1 Plate', image: '/schezwanvegmomos.jpeg' },
+          { id: 'mt-mm11', name: 'Sezwan Momos (Panner)', description: 'Schezwan tossed paneer momos', price: 160, qty: '1 Plate', image: '/schezwanpaneermomos.jpeg' },
+          { id: 'mt-mm12', name: 'Sezwan Momos (Chicken)', description: 'Schezwan tossed chicken momos', price: 175, qty: '1 Plate', image: '/schezwanchickenmomos.jpeg' },
+          { id: 'mt-mm13', name: 'Cheese Gravy Momos (Veg)', description: 'Veg momos dipped in rich cheese gravy', price: 175, qty: '1 Plate', image: '/cheesgravyvegmomos.jpeg' },
+          { id: 'mt-mm14', name: 'Cheese Gravy Momos (Panner)', description: 'Paneer momos in cheese gravy', price: 185, qty: '1 Plate', image: '/cheesgravypaneermomos.jpeg' },
+          { id: 'mt-mm15', name: 'Cheese Gravy Momos (Chicken)', description: 'Chicken momos in cheese gravy', price: 200, qty: '1 Plate', image: '/cheesgravychickenmomos.jpeg' }
+        ]
+      },
+      {
+        id: 'wrap',
+        label: 'Wrap',
+        items: [
+          { id: 'mt-wr1', name: 'Veg Wrap', description: 'Fresh veggie wrap', price: 92, qty: '1 Pc', image: '/vegwrap.jpeg' },
+          { id: 'mt-wr2', name: 'Paneer Tikka Wrap', description: 'Spiced paneer wrap', price: 138, qty: '1 Pc', image: '/paneerwrap.jpg' },
+          { id: 'mt-wr3', name: 'Chicken Wrap', description: 'Savory chicken wrap', price: 138, qty: '1 Pc', image: '/chickenwrap.jpeg' },
+          { id: 'mt-wr4', name: 'Crispy Chicken Wrap', description: 'Crispy fried chicken wrap', price: 173, qty: '1 Pc', image: '/crispychickenwrap.jpeg' }
+        ]
+      },
+      {
+        id: 'chinese-noodles',
+        label: 'Chinese Noodles',
+        items: [
+          { id: 'mt-cn1', name: 'Veg Noodles', description: 'Classic stir-fried veg noodles', price: 115, qty: '1 Plate', image: '/vegnoodls.jpg' },
+          { id: 'mt-cn2', name: 'Schezwan Veg Noodles', description: 'Spicy schezwan veg noodles', price: 140, qty: '1 Plate', image: '/schezwanvegnoodls.jpg' },
+          { id: 'mt-cn3', name: 'Chicken Noodles', description: 'Stir-fried noodles with chicken', price: 175, qty: '1 Plate', image: '/chickennoodls.jpeg' },
+          { id: 'mt-cn4', name: 'Schezwan Chicken Noodles', description: 'Spicy schezwan chicken noodles', price: 185, qty: '1 Plate', image: '/schezwanchickennoolds.png' },
+          { id: 'mt-cn5', name: 'Paneer Noodles', description: 'Noodles tossed with paneer cubes', price: 200, qty: '1 Plate', image: '/pannernoodls.jpeg' },
+          { id: 'mt-cn6', name: 'Schezwan Paneer Noodles', description: 'Spicy schezwan paneer noodles', price: 220, qty: '1 Plate', image: '/schezwanpannernoodls.jpg' }
+        ]
+      },
+      {
+        id: 'fried-rice',
+        label: 'Fried Rice',
+        items: [
+          { id: 'mt-frs1', name: 'Veg Fried Rice', description: 'Classic veggie fried rice', price: 115, qty: '1 Plate', image: '/vegfriedrice.jpg' },
+          { id: 'mt-frs2', name: 'Schezwan Veg Fried Rice', description: 'Spicy schezwan veg rice', price: 140, qty: '1 Plate', image: '/schezwanvegfriedrice.jpg' },
+          { id: 'mt-frs3', name: 'Chicken Fried Rice', description: 'Flavorful chicken fried rice', price: 160, qty: '1 Plate', image: '/chickenfriedrice.jpg' },
+          { id: 'mt-frs4', name: 'Schezwan Chicken Fried Rice', description: 'Spicy schezwan chicken rice', price: 185, qty: '1 Plate', image: '/schezwanchickenfriedrice.jpg' },
+          { id: 'mt-frs5', name: 'Paneer Fried Rice', description: 'Fried rice with paneer chunks', price: 200, qty: '1 Plate', image: '/paneerfriedrice.jpg' },
+          { id: 'mt-frs6', name: 'Schezwan Paneer Fried Rice', description: 'Spicy schezwan paneer rice', price: 220, qty: '1 Plate', image: '/schezwanpaneerfriedrice.jpg' }
+        ]
+      }
+    ]
+  
   },
 
   // ============ COFFEE SHOPS ============
@@ -433,11 +640,23 @@ export const SHOPS: Shop[] = [
     name: 'Mist Tea',
     tagline: 'Aesthetic Tea Shop',
     address: 'Anaimalai',
+    timing: 'open 10:30am to 10:00pm',
     rating: 4.8,
     coverImage: '/mittea.jpg',
     deliveryNote: 'Fresh items delivered within 30 min',
     categories: [
-        
+       
+      {
+        id: 'fries',
+        label: 'Fries',
+        items: [
+          { id: 'mt-fr1', name: 'French Fries', description: 'Crispy salted potato fries', price: 115, qty: '1 Plate', image: '/ff.jpg' },
+          { id: 'mt-fr2', name: 'Peri Peri Fries', description: 'Spicy peri peri seasoned fries', price: 140, qty: '1 Plate', image: '/ppf.jpg' },
+          { id: 'mt-fr3', name: 'Schezwan Fries', description: 'Tossed in spicy schezwan sauce', price: 160, qty: '1 Plate', image: '/schezwanfries.jpeg' },
+          { id: 'mt-fr4', name: 'Chicken Loaded Fries', description: 'Fries topped with chicken chunks & sauce', price: 210, qty: '1 Plate', image: '/clf.jpg' }
+        ]
+      },
+      
       {
         id: 'milo',
         label: 'Milo & Bournvita',
@@ -504,16 +723,7 @@ export const SHOPS: Shop[] = [
           { id: 'mt-ds6', name: 'Ras Malai Tres Leches', description: 'Rasmalai flavored fusion milk cake', price: 200, qty: '1 Pc', image: '/rasmalaicake.jpg' }
         ]
       },
-      {
-        id: 'fries',
-        label: 'Fries',
-        items: [
-          { id: 'mt-fr1', name: 'French Fries', description: 'Crispy salted potato fries', price: 115, qty: '1 Plate', image: '/ff.jpg' },
-          { id: 'mt-fr2', name: 'Peri Peri Fries', description: 'Spicy peri peri seasoned fries', price: 140, qty: '1 Plate', image: '/ppf.jpg' },
-          { id: 'mt-fr3', name: 'Schezwan Fries', description: 'Tossed in spicy schezwan sauce', price: 160, qty: '1 Plate', image: '/schezwanfries.jpeg' },
-          { id: 'mt-fr4', name: 'Chicken Loaded Fries', description: 'Fries topped with chicken chunks & sauce', price: 210, qty: '1 Plate', image: '/clf.jpg' }
-        ]
-      },
+      
       {
         id: 'fried-chicken',
         label: 'Fried Chicken',
