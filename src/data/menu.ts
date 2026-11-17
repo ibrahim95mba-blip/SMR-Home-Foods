@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react';
-import { UtensilsCrossed, Restaurant, Coffee, Drumstick } from 'lucide-react';
+import { UtensilsCrossed,Utensils, Coffee, Drumstick } from 'lucide-react';
 
 export type MenuItem = {
   id: string;
@@ -52,9 +52,9 @@ export const SHOP_CATEGORIES: ShopCategory[] = [
     description: 'Homestyle South Indian meals',
   },
   {
-    type: 'hotel',
-    label: 'Hotels',
-    icon: Hotel as any,
+    type: 'restaurant',
+    label: 'restaurent',
+    icon: Utensils as any,
     iconBg: 'bg-orange-500',
     iconColor: 'text-white',
     gradient: 'from-orange-500 to-red-500',
@@ -137,7 +137,7 @@ export const SHOPS: Shop[] = [
   // ============ HOTELS ============
   {
     id: 'LALA-BRIYANI-HOTEL-ANAIMALAI',
-    categoryType: 'Restaurant',
+    categoryType: 'restaurant',
     name: 'Lala Briyani Hotel',
     tagline: 'Authentic Briyani & Fast Food',
     address: 'State Bank Opposite , Anaimalai',
@@ -242,7 +242,7 @@ export const SHOPS: Shop[] = [
   },
   {
     id: 'MIST-TEA',
-    categoryType: 'Restaurant',
+    categoryType: 'restaurant',
     name: 'Mist Tea',
     tagline: 'Aesthetic Tea Shop',
     address: 'Anaimalai',
