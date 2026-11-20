@@ -245,7 +245,7 @@ export const SHOPS: Shop[] = [
     tagline: 'Advertisement Menu · it will come 15% extra charge ',
     address: 'Anaimalai',
     rating: 4.8,
-    coverImage: '/mittea.jpg',
+    coverImage: '/misttea.jpg',
     deliveryNote: 'open time 10:30am to 10:00pm - Fresh items delivered within 30 min',
     categories: [
        
@@ -450,7 +450,7 @@ export const SHOPS: Shop[] = [
     tagline: 'Advertisement Menu · it will come 15% extra charge ',
     address: 'Anaimalai',
     rating: 4.8,
-    coverImage: '/mittea.jpg',
+    coverImage: '/misttea.jpg',
     deliveryNote: 'open time 10:30am to 10:00pm - Fresh items delivered within 30 min',
     categories: [
        
