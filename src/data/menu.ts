@@ -440,6 +440,78 @@ export const SHOPS: Shop[] = [
       
     ]
   },
+
+  {
+    id: 'HOTEL-ANSIYA',
+    categoryType: 'restaurant',
+    name: 'Hotel Ansiya',
+    tagline: 'advertisement menu. It will come 15% extra charge.',
+    address: 'Anaimalai',
+    rating: 4.7,
+    coverImage: '/hotelansiya.png',
+    deliveryNote: 'open time 12:30pm to 10:30pm - Fresh items delivered within 30 min',
+    categories: [
+      {
+        id: 'biriyani',
+        label: 'Biriyani',
+        items: [
+          { id: 'ha-b1', name: 'Chicken Biriyani', description: 'Aromatic spiced chicken biriyani', price: 150, qty: '1 Plate', image: '/chickenbriyani.png' },
+          { id: 'ha-b2', name: 'Egg Biriyani', description: 'Spiced biriyani served with boiled egg', price: 115, qty: '1 Plate', image: px('35071825') },
+          { id: 'ha-b3', name: 'Empty Biriyani', description: 'Kuska biriyani with salna and raita', price: 105, qty: '1 Plate', image: px('3926133') },
+          
+        ],
+      },
+      {
+        id: 'chicken-items',
+        label: 'Chicken Items',
+        items: [
+          { id: 'ha-c1', name: 'Chicken 65', description: 'Crispy deep-fried spicy chicken', price: 105, qty: '1 Plate', image: px('7353388') },
+          { id: 'ha-c2', name: 'Bonless Chicken', description: 'Tender boneless chicken starter', price: 150, qty: '1 Plate', image: px('35071824') },
+          { id: 'ha-c3', name: 'Pepper Chicken', description: 'Roasted chicken tossed with crushed black pepper', price: 150, qty: '1 Plate', image: px('8174278') },
+          { id: 'ha-c4', name: 'Manchurian', description: 'Indo-Chinese style spicy chicken manchurian', price: 205, qty: '1 Plate', image: px('35071815') },
+          
+        ],
+      },
+      {
+        id: 'grill-chicken',
+        label: 'Grill Chicken',
+        items: [
+          { id: 'ha-g1', name: 'Grill Full', description: 'Charcoal-grilled whole chicken', price: 570, qty: '1 Full', image: px('25391590') },
+          { id: 'ha-g2', name: 'Grill Half', description: 'Charcoal-grilled half chicken', price: 300, qty: '1 Half', image: px('25391590') },
+          { id: 'ha-g3', name: 'Grill Quarter', description: 'Charcoal-grilled quarter chicken', price: 150, qty: '1 Quarter', image: px('25391590') },
+        ],
+      },
+      {
+        id: 'shawarma',
+        label: 'Shawarma',
+        items: [
+          { id: 'ha-s1', name: 'Shawarma Roll', description: 'Roasted chicken wrapped in soft rumali roti', price: 105, qty: '1 Roll', image: px('29306505') },
+          { id: 'ha-s2', name: 'Shawarma Plate', description: 'Platter of sliced shawarma meat with dips and bread', price: 160, qty: '1 Plate', image: px('16022887') },
+          
+        ],
+      },
+      {
+        id: 'fried-rice',
+        label: 'Fried Rice',
+        items: [
+          { id: 'ha-fr1', name: 'Chicken Fried Rice', description: 'Wok-tossed rice with chicken, egg, and veggies', price: 130, qty: '1 Plate', image: px('7758253') },
+          { id: 'ha-fr2', name: 'Egg Fried Rice', description: 'Classic scrambled egg fried rice', price: 115, qty: '1 Plate', image: px('34683318') },
+          { id: 'ha-fr3', name: 'Veg Fried Rice', description: 'Mixed vegetable wok fried rice', price: 105, qty: '1 Plate', image: px('3926124') },
+        ],
+     },
+
+      {
+        id: 'noodles',
+        label: 'Noodles',
+        items: [
+          { id: 'ha-n1', name: 'Chicken Noodles', description: 'Stir-fried noodles with tender chicken and veggies', price: 130, qty: '1 Plate', image: px('8983416') },
+          { id: 'ha-n2', name: 'Egg Noodles', description: 'Savory egg noodles tossed with spring onions', price: 115, qty: '1 Plate', image: px('8895736') },
+          { id: 'ha-n3', name: 'Veg Noodles', description: 'Classic vegetable hakka-style noodles', price: 105, qty: '1 Plate', image: px('37165674') },
+        ],
+      },
+      
+    ],
+  },
   
   // ============ COFFEE SHOPS ============
   
